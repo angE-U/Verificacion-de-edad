@@ -1,0 +1,136 @@
+
+/* ESTILO GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #001018,
+        #00333b,
+        #001018
+    );
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+/* FONDO DECORATIVO */
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #08d5c5;
+    filter: blur(180px);
+    opacity: 0.15;
+    top: -150px;
+    right: -100px;
+    z-index: -1;
+}
+
+/* CONTENEDOR PRINCIPAL */
+body > h1,
+body > label,
+body > input,
+body > button {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+h1::first-letter {
+    color: #08d5c5;
+}
+
+/* ETIQUETA */
+label {
+    font-size: 16px;
+    color: #b8d5d8;
+    margin-bottom: 12px;
+}
+
+/* CAMPO DE EDAD */
+input {
+    width: 280px;
+    max-width: 90%;
+    padding: 16px;
+    margin-top: 12px;
+
+    background: #001820;
+    color: white;
+
+    border: 1px solid #087e83;
+    border-radius: 10px;
+
+    font-size: 18px;
+    outline: none;
+
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #08d5c5;
+    box-shadow: 0 0 15px #08d5c555;
+}
+
+/* BOTÓN */
+button {
+    width: 280px;
+    max-width: 90%;
+    padding: 16px;
+
+    background: linear-gradient(
+        100deg,
+        #08d5c5,
+        #009e9b
+    );
+
+    color: #001018;
+    font-size: 16px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 25px #08d5c566;
+    background: white;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    input,
+    button {
+        width: 100%;
+    }
+}
